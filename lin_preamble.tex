@@ -1,0 +1,76 @@
+\usepackage{paralist}
+\usepackage{amsmath,amssymb,dsfont,amsthm,dsfont,hyperref}
+\usepackage{xfrac}
+\usepackage{xcolor}
+% \usepackage[title,toc,titletoc,page]{appendix}
+%\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[numbers,sort,square]{natbib}
+\usepackage[capitalize]{cleveref}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{booktabs} % For prettier tables
+\usepackage{mathrsfs}
+\usepackage{enumitem}
+
+\usepackage{forloop}
+
+\usepackage{thmtools} 
+\usepackage{thm-restate}
+\declaretheorem[name=Theorem,numberwithin=section]{thm}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{cor}[theorem]{Corollary}
+\newtheorem{obs}[theorem]{Observation}
+\newtheorem{prop}[theorem]{Proposition}
+
+% \crefname{appsec}{Appendix}{Appendices}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+% Caligraphics and Board Letters
+\newcommand{\defcal}[1]{\expandafter\newcommand\csname 
+	c#1\endcsname{{\mathcal{#1}}}}
+\newcommand{\defbb}[1]{\expandafter\newcommand\csname 
+	b#1\endcsname{{\mathbb{#1}}}}
+\newcommand{\defbf}[1]{\expandafter\newcommand\csname 
+	bf#1\endcsname{{\mathbf{#1}}}}
+\newcounter{calBbCounter}
+\forLoop{1}{26}{calBbCounter}{
+	\edef\letter{\Alph{calBbCounter}}
+	\expandafter\defcal\letter
+	\expandafter\defbb\letter
+	\expandafter\defbf\letter
+}
+\forLoop{1}{26}{calBbCounter}{
+	\edef\letter{\alph{calBbCounter}}
+	% 	\expandafter\defcal\letter
+	% 	\expandafter\defbb\letter
+	\expandafter\defbf\letter
+}
+
+% Other Commands
+\newcommand{\eps}{\varepsilon}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\ind}{\mathds{1}}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diag}{diag}
+
+% \newcommand{\ie}{{\it i.e.}}
+% \newcommand{\eg}{{\it e.g.}}
+\newcommand{\lc}[1]{\textcolor{red}{\textbf{\colorbox{yellow}{Lin:} }#1}}
+% \newcommand{\lc}[1]{}
+
+\DeclareMathOperator{\unif}{Unif}
+\DeclareMathOperator{\pois}{Poisson}
+\DeclareMathOperator{\ber}{Ber}
+\DeclareMathOperator{\bin}{Bin}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
